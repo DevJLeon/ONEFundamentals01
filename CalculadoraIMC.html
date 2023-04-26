@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<h1>Calculadora IMC</h1>
+<h3> (índice de masa corporal)</h3>
+
+<script>
+    function saltarLinea () {
+        document.write("<br>");
+    };
+    
+    function mostrar (contenido) {
+        document.write(contenido);
+        saltarLinea();
+    };
+
+    function calcularIMC (pesoo, altura) {
+            if (altura > 100) {
+                (altura = altura/100)
+            };
+            return(pesoo / ((altura**2)));
+        };
+
+    var nombre = prompt ("Ingrese su nombre");
+    var peso = parseFloat(prompt (nombre + ", ingrese su peso"));
+    var estatura = parseFloat(prompt (nombre + ", ingrese su estatura"));
+
+    var IMCCalculado = calcularIMC(peso, estatura);
+
+
+
+
+    mostrar(nombre + ", su IMC es " + IMCCalculado)
+    if (IMCCalculado < 18.5) {
+        mostrar("Está bajo de peso")
+    } else if (IMCCalculado >= 18.5 && IMCCalculado <= 24.9 ) {
+        mostrar("Su peso es normal")    
+    } else if (IMCCalculado >= 24.9 && IMCCalculado <= 29.9  ) {
+        mostrar("Esta en sobrepeso")
+    } else if (IMCCalculado >= 30 && IMCCalculado <= 34.9  ) {
+        mostrar("Obesidad tipo 1")
+    } else if (IMCCalculado >= 35 && IMCCalculado <= 39.9  ) {
+        mostrar("Obesidad tipo 2")
+    } else if (IMCCalculado > 40) {
+        mostrar("Obesidad tipo 3")
+    } 
+</script>

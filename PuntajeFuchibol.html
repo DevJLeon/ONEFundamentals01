@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<h1>Calculadora fuchibol</h1>
+
+<script>
+    function saltarLinea () {
+        document.write("<br>");
+    };
+    
+    function mostrar (contenido) {
+        document.write(contenido);
+        saltarLinea();
+    };
+
+    var victorias = parseInt (prompt("Ingrese el numero de victorias del equipo"))
+    var empates = parseInt (prompt("Ingrese el numero de empates del equipo"))
+
+    function calcularPuntaje (victorias, empates) {
+        return ((victorias*3) + empates);
+    }
+
+    var totalPuntos = calcularPuntaje(victorias, empates);
+
+    mostrar("El total de puntos del equipo esta temporada es " + totalPuntos)
+
+</script>
